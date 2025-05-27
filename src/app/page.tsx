@@ -46,7 +46,7 @@ export default function Page() {
             setModel(obj)
           })
         })
-      } catch (e) {
+      } catch {
         console.warn('❌ .mtl が見つからないか読み込み失敗、マテリアルなしで表示')
         const objLoader = new OBJLoader()
         objLoader.load(url, (obj) => setModel(obj))

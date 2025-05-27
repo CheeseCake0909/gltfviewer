@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment, Grid } from '@react-three/drei'
 import * as THREE from 'three'
 import { useState, useEffect } from 'react'
-import { GridHelper } from 'three'
 
 type ViewerProps = {
   model: THREE.Object3D | null
@@ -17,7 +16,7 @@ export default function Viewer({ model }: ViewerProps) {
   const [scale, setScale] = useState(1)
   const [lightType, setLightType] = useState<'ambient' | 'directional' | 'point'>('ambient')
   const [lightColor, setLightColor] = useState('#ffffff')
-  const [lightPosition, setLightPosition] = useState<[number, number, number]>([5, 5, 5])
+  const [lightPosition] = useState<[number, number, number]>([5, 5, 5])
 
   // ✅ モデルのマテリアルをコンソールに表示
   useEffect(() => {
